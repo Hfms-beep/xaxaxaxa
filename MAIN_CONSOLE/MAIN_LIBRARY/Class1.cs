@@ -314,14 +314,15 @@ namespace MAIN_LIBRARY
     /// вариант 7
     /// Костров Егор
     /// </summary>
-    class Para
+    public class Para
     {
-        private string StartPara;
-        private string EndPara;
-        private string StartChill;
-        private string EndChill;
+
+        private DateTime StartPara;
+        private DateTime EndPara;
+        private DateTime StartChill;
+        private DateTime EndChill;
         private Smena Smena = new Smena();
-        public string ParaStart
+        public DateTime ParaStart
         {
             get
             {
@@ -332,7 +333,7 @@ namespace MAIN_LIBRARY
                 StartPara = value;
             }
         }
-        public string ParaEnd
+        public DateTime ParaEnd
         {
             get
             {
@@ -343,7 +344,7 @@ namespace MAIN_LIBRARY
                 EndPara = value;
             }
         }
-        public string ChillStart
+        public DateTime ChillStart
         {
             get
             {
@@ -354,7 +355,7 @@ namespace MAIN_LIBRARY
                 StartChill = value;
             }
         }
-        public string ChillEnd
+        public DateTime ChillEnd
         {
             get
             {
@@ -365,13 +366,21 @@ namespace MAIN_LIBRARY
                 EndChill = value;
             }
         }
-        public Para(string startpara, string endpara, string startchill, string endchill, Smena smena)
+        
+        public Para(DateTime startpara, DateTime endpara, DateTime startchill, DateTime endchill, Smena smena)
         {
             StartPara = startpara;
             EndPara = endpara;
             StartChill = startchill;
             EndChill = endchill;
             Smena = smena;
+        }
+        public Para(DateTime startpara, DateTime endpara, DateTime startchill, DateTime endchill)
+        {
+            StartPara = startpara;
+            EndPara = endpara;
+            StartChill = startchill;
+            EndChill = endchill;
         }
         public Para()
         {
