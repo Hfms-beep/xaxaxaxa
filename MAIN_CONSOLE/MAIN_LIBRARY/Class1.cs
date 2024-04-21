@@ -1,5 +1,5 @@
 ﻿using System;
-using BankAccountNS;
+using MAIN_LIBRARY;
 using System.Buffers;
 using System.Text.RegularExpressions;
 
@@ -104,7 +104,7 @@ namespace MAIN_LIBRARY
     public class Auditoria
     {
         private string _Name;
-        private Sotrudnik _sotrudnic;
+        private Sotrudnic _sotrudnic = new Sotrudnic();
         private string _Seat = "23";
         private string _Windows = "2";
         //private Oborydovanie _oborydovanie; В группе не делается такой вариант
@@ -202,8 +202,8 @@ namespace MAIN_LIBRARY
         private string _sokrachenie;
         private string _chislennost;
         private int _godpostuplenija;
-        private string Sotrudnik _sotrudnic; //Нет варианта 9 (Сотрудник)
-        private string Specialnost _specialnost; //Нет варианта 6 (Специальность)
+        private Sotrudnic _sotrudnic = new Sotrudnic(); //Нет варианта 9 (Сотрудник)
+        
         public string Nazvanie
         {
             get { return _nazvanie; }
@@ -229,24 +229,16 @@ namespace MAIN_LIBRARY
             }
             get { return _godpostuplenija; }
         }
-        public string Sotrudnik 
-        {
-            get { return _sotrudik; }
-            set { _sotrudnic = value; }
-        }
-        public string Specialnost
-        {
-            get { return _specialnost; }
-            set { _specialnost = value; }
-        }
-        public Group1(string nazvanie, string sokrachenie, string chislennost, int godpostuplenija, Sotrudnik sotrudnic, Specialnost specialnost)
+        
+       
+        public Group1(string nazvanie, string sokrachenie, string chislennost, int godpostuplenija, Sotrudnic sotrudnic)
         {
             Nazvanie = nazvanie;
             Sokrachenie = sokrachenie;
             Chislennost = chislennost;
             Godpostuplenija = godpostuplenija;
             _sotrudnic = sotrudnic;
-            _specialnost = specialnost;
+           
 
         }
     }
@@ -299,6 +291,10 @@ namespace MAIN_LIBRARY
             Name = name;
 
         }
+        public Smena()
+        {
+
+        }
     }
     /// <summary>
     /// Класс Вид Занятий
@@ -324,7 +320,7 @@ namespace MAIN_LIBRARY
         private string EndPara;
         private string StartChill;
         private string EndChill;
-        private string Smena _smena;
+        private Smena Smena = new Smena();
         public string ParaStart
         {
             get
@@ -375,7 +371,11 @@ namespace MAIN_LIBRARY
             EndPara = endpara;
             StartChill = startchill;
             EndChill = endchill;
-            _smena = smena;
+            Smena = smena;
+        }
+        public Para()
+        {
+
         }
 
     }
@@ -422,6 +422,10 @@ namespace MAIN_LIBRARY
             _Otchestvo= otchestvo;
             _doljnost= doljnost;
             
+        }
+        public Sotrudnic()
+        {
+
         }
     }
 
